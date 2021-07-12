@@ -3,7 +3,14 @@ import people from "../../data";
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
 
 const Review = () => {
-	return <h2>review component</h2>;
+	const ReviewDate = () => {
+		people.map((person) => {
+			console.log("test", person);
+		});
+		return <h2>test</h2>;
+	};
+
+	return <ReviewDate />;
 };
 
 export default Review;
