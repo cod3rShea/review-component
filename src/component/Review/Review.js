@@ -6,7 +6,23 @@ const Review = () => {
 	const [index, setIndex] = useState(0);
 	const { name, job, image, text } = people[index];
 
-	console.log("first index", index);
+	const checkNumber = (number) => {
+		console.log("my number 2", number);
+		if (number > people.length - 1) {
+			return 0;
+		}
+		if (number < 0) {
+			return people.length - 1;
+		}
+		return number;
+	};
+
+	const nextPerson = () => {
+		setIndex((index) => {
+			let newIndex = index + 1;
+			return checkNumber(newIndex);
+		});
+	};
 
 	return (
 		<article className="review">
@@ -20,7 +36,7 @@ const Review = () => {
 				<button className="prev-btn">
 					<FaChevronLeft />
 				</button>
-				<button className="next-btn">
+				<button className="next-btn" onClick={nextPerson}>
 					<FaChevronRight />
 				</button>
 			</div>
